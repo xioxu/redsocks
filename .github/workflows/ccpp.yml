@@ -17,7 +17,7 @@ jobs:
   build_freebsd:
     runs-on: macos-latest
     name: A job to run test FreeBSD
-    env:
+    # env:
     steps:
     - uses: actions/checkout@v2
     - name: Build in FreeBSD
