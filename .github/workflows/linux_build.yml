@@ -1,6 +1,7 @@
 name: linux_build
 
 on:
+  push:
   workflow_dispatch:
   
 jobs:
@@ -12,5 +13,12 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y libssl1.0-dev libevent-dev
-    - name: Build
-      run: make
+    - name: mkdir
+      run: mkdir build
+    - name: buid
+      run: make --build build/ --target all
+    - name: Upload Example binary
+      uses: actions/upload-artifact@v1
+      with:
+        name: upload binary
+        path: build/src/Example
