@@ -1,0 +1,40 @@
+---
+kind: pipeline
+type: docker
+name: arm64
+platform:
+  os: linux
+  arch: arm64
+steps:
+  - name: ubuntu-bionic
+    image: ubuntu:bionic
+    commands:
+      - uname -m
+      - apt-get -yq update
+      - sudo apt-get install libssl-dev
+      - sudo apt-get install libevent-dev
+      - make
+# https://docker-runner.docs.drone.io/configuration/trigger/
+trigger:
+  branch:
+    - master
+
+---
+kind: pipeline
+type: docker
+name: arm32
+platform:
+  os: linux
+  arch: arm
+steps:
+  - name: ubuntu-bionic
+    image: ubuntu:bionic
+    commands:
+      - uname -m
+      - apt-get -yq update
+      - sudo apt-get install libssl-dev
+      - sudo apt-get install libevent-dev
+      - make
+trigger:
+  branch:
+    - master
