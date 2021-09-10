@@ -30,6 +30,9 @@ platform:
 steps:
   - name: ubuntu-trusty
     image: ubuntu:trusty
+    environment:
+      GH_KEY:
+        from_secret: gh_token
     commands:
       - uname -m
       - apt-get -yq update
@@ -37,11 +40,12 @@ steps:
       - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
       - make
+      - echo $GH_KEY
   - name: publish
     image: plugins/github-release
     environment:
       GH_KEY:
-        from_secret: GH_KEY
+        from_secret: gh_token
     settings:
       api_key: $GH_KEY
     files:
