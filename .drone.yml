@@ -37,14 +37,15 @@ steps:
       - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
       - make
+      
+  - name: publish:
+    image: plugins/github-release
+    settings:
+        api_key: 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
+    files:
+        - ./redsocks2
     
 trigger:
   branch:
     - master
     
-- name: publish:
-image: plugins/github-release
-settings:
-    api_key: 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
-files:
-    - ./redsocks2
