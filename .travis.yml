@@ -3,6 +3,10 @@ language: c
 compiler:
   - gcc
   - clang
+arch:
+  - amd64
+  - arm64
+os: linux  # different CPU architectures are only supported on Linux
 
 install:
  - sudo apt-get update
