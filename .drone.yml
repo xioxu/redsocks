@@ -28,7 +28,7 @@ platform:
   os: linux
   arch: arm
 steps:
-  - name: build
+  - name: ubuntu-trusty
     image: ubuntu:trusty
     commands:
       - uname -m
