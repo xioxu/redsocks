@@ -40,7 +40,7 @@ steps:
   - name: publish
     image: plugins/github-release
     settings:
-      api_key: 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
+      api_key: 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
     files:
       - ./redsocks2
     when:
