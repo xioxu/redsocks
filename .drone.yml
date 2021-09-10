@@ -44,10 +44,8 @@ steps:
   - name: publish
     image: plugins/github-release
     environment:
-      GH_KEY:
+      api_key:
         from_secret: gh_token
-    settings:
-      api_key: $GH_KEY
     files:
       - ./redsocks2
     when:
