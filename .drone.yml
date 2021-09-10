@@ -13,7 +13,7 @@ steps:
       - apt-get -yq update
       - apt-get install libssl1.1
       - apt-get install libevent-2.1-6
-      - make
+      - apt-get -yq install gcc make file
 # https://docker-runner.docs.drone.io/configuration/trigger/
 trigger:
   branch:
@@ -34,6 +34,7 @@ steps:
       - apt-get -yq update
       - apt-get install libssl1.1
       - apt-get install libevent-2.1-6
+      - apt-get -yq install gcc make file
       - make
 trigger:
   branch:
