@@ -37,7 +37,7 @@ steps:
       - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
       - make
-  - name: publish:
+  - name: publish
     image: plugins/github-release
     settings:
       api_key: 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
