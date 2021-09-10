@@ -43,7 +43,7 @@ steps:
       api_key:
         from_secret: gh_token
     files:
-      - dist/*
+      - tools/*
     when:
       event: tag
     
