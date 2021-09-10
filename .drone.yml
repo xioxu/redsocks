@@ -6,13 +6,13 @@ platform:
   os: linux
   arch: arm64
 steps:
-  - name: ubuntu-xenial
-    image: ubuntu:xenial
+  - name: ubuntu-bionic
+    image: ubuntu:bionic
     commands:
       - uname -m
       - apt-get -yq update
-      - apt-get install libevent-dev
-      - apt-get install libssl-dev
+      - apt-get -yq  install libevent-dev
+      - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
       - make
 # https://docker-runner.docs.drone.io/configuration/trigger/
@@ -28,13 +28,13 @@ platform:
   os: linux
   arch: arm
 steps:
-  - name: ubuntu-xenial
-    image: ubuntu:xenial
+  - name: ubuntu-bionic
+    image: ubuntu:bionic
     commands:
       - uname -m
       - apt-get -yq update
-      - apt-get install libevent-dev
-      - apt-get install libssl-dev
+      - apt-get -yq install libevent-dev
+      - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
       - make
 trigger:
