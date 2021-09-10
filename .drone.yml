@@ -42,8 +42,8 @@ steps:
     settings:
       api_key:
         from_secret: gh_token
-    files:
-      - tools/*
+      files:
+        - tools/*
     when:
       event: tag
     
