@@ -6,8 +6,8 @@ platform:
   os: linux
   arch: arm64
 steps:
-  - name: ubuntu-bionic
-    image: ubuntu:bionic
+  - name: ubuntu-trusty
+    image: ubuntu:trusty
     commands:
       - uname -m
       - apt-get -yq update
@@ -28,8 +28,8 @@ platform:
   os: linux
   arch: arm
 steps:
-  - name: ubuntu-bionic
-    image: ubuntu:bionic
+  - name: ubuntu-trusty
+    image: ubuntu:trusty
     commands:
       - uname -m
       - apt-get -yq update
