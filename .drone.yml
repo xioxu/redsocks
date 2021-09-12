@@ -14,7 +14,7 @@ steps:
       - apt-get -yq  install libevent-dev
       - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
-      - make
+      - make ENABLE_STATIC=true DISABLE_SHADOWSOCKS=true
 # https://docker-runner.docs.drone.io/configuration/trigger/
 trigger:
   branch:
@@ -43,7 +43,6 @@ steps:
       api_key:
         from_secret: gh_token
       files:
-        - tools/*
         - ./redsocks2
     when:
       event: tag
