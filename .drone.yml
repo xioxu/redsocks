@@ -36,7 +36,7 @@ steps:
       - apt-get -yq install libevent-dev
       - apt-get -yq install libssl-dev
       - apt-get -yq install gcc make file
-      - make
+      - make ENABLE_STATIC=true DISABLE_SHADOWSOCKS=true
   - name: publish
     image: plugins/github-release
     settings:
